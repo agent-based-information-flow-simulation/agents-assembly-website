@@ -3,38 +3,38 @@ version: "3.9"
 services:
   api:
     build: ./api
-    container_name: api-prod
+    container_name: api
     environment:
-      - CLIENT_CORS_DOMAIN=http://localhost
+      - CLIENT_CORS_DOMAIN=https://agents-assembly.com
       - PORT=8000
       - RELOAD=False
     expose:
       - 8000
     image: aasm-website-api
     networks:
-      - proxynet-prod
+      - proxynet
     restart: always
 
   client:
     build:
       args:
-        - VITE_CLIENT_SIDE_API_URL=http://localhost/api
+        - VITE_CLIENT_SIDE_API_URL=https://agents-assembly.com/api
         - VITE_SERVER_SIDE_API_URL=http://proxy/api
       context: ./client
       dockerfile: Dockerfile.prod
-    container_name: client-prod
+    container_name: client
     expose:
       - 3000
     image: aasm-website-client
     networks:
-      - proxynet-prod
+      - proxynet
     restart: always
 
   proxy:
     build:
       context: ./proxy
       dockerfile: Dockerfile.prod
-    container_name: proxy-prod
+    container_name: proxy
     depends_on:
       - api
       - client
@@ -42,10 +42,10 @@ services:
       - 80
     image: aasm-website-proxy
     networks:
-      - proxynet-prod
+      - proxynet
     ports:
       - "80:80"
     restart: always
 
 networks:
-  proxynet-prod:
+  proxynet:
