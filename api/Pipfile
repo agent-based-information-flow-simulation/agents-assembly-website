@@ -4,17 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = {extras = ["all"], version = "*"}
 aasm = "*"
-isort = "*"
-black = "*"
+fastapi = {extras = ["all"], version = "*"}
 
 [dev-packages]
-isort = "*"
 black = "*"
+isort = "*"
 
 [requires]
 python_version = "3.10"
-
-[pipenv]
-allow_prereleases = true

@@ -1,5 +1,4 @@
 from typing import List
-from fastapi.encoders import jsonable_encoder
 
 import uvicorn
 from aasm import PanicException, __version__, get_spade_code
@@ -8,6 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from starlette.requests import Request
 from starlette.responses import JSONResponse
+
+from src.settings import app_settings
 
 
 class AgentsAssemblyCode(BaseModel):
@@ -19,11 +20,11 @@ class SpadeCode(BaseModel):
     code_lines: List[str]
 
 
-app = FastAPI()
-cors_origins = ["http://localhost:3000"]
-cors_methods = ["POST"]
+app = FastAPI(root_path="/api")
 app.add_middleware(
-    CORSMiddleware, allow_origins=cors_origins, allow_methods=cors_methods
+    CORSMiddleware,
+    allow_origins=[app_settings.client_cors_domain],
+    allow_methods=["POST"],
 )
 
 
@@ -49,4 +50,9 @@ async def post_aasm_code(agent_assembly_code: AgentsAssemblyCode):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(
+        "src.main:app",
+        host="0.0.0.0",
+        port=app_settings.port,
+        reload=app_settings.enable_reload,
+    )

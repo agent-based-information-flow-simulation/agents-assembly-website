@@ -1,0 +1,61 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./api
+    container_name: api-dev
+    environment:
+      - CLIENT_CORS_DOMAIN=http://localhost
+      - PORT=8000
+      - RELOAD=True
+    expose:
+      - 8000
+    image: aasm-website-api
+    networks:
+      - client-net-dev
+      - proxy-net-dev
+    ports:
+      - "8000:8000"
+    restart: always
+    volumes:
+      - ./api/src:/api/src
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    container_name: client-dev
+    environment:
+      - VITE_CLIENT_SIDE_API_URL=http://localhost/api
+      - VITE_SERVER_SIDE_API_URL=http://api:8000
+    expose:
+      - 3000
+    image: aasm-website-client
+    networks:
+      - client-net-dev
+      - proxy-net-dev
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - ./client:/app
+
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile.dev
+    container_name: proxy-dev
+    depends_on:
+      - api
+      - client
+    image: aasm-website-proxy
+    networks:
+      - proxy-net-dev
+    ports:
+      - "80:80"
+      - "24678:24678"
+    restart: always
+
+networks:
+  client-net-dev:
+  proxy-net-dev:

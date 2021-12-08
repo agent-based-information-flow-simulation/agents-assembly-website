@@ -7,6 +7,7 @@
 </svelte:head>
 
 <div class="flex flex-col items-center">
+  <p>We do not store any data.</p>
   <p class="text-center">
     The source code of all Agents Assembly releated applications can be found <a
       class="text-blue-800 hover:underline"
