@@ -48,4 +48,4 @@ services:
     restart: always
 
 networks:
-  proxy-net-prod:
+  proxynet-prod:
