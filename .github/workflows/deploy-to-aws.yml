@@ -1,0 +1,29 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Generate deployment package
+      run: zip -r ${{ github.SHA }}.zip . -x '*.git*'
+
+    - name: Deploy to EBS
+      uses: einaregilsson/beanstalk-deploy@v19
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: agents-assembly-website
+        environment_name: agents-assembly-website-env
+        version_label: ${{ github.SHA }}
+        region: eu-central-1
+        deployment_package: ${{ github.SHA }}.zip
+        wait_for_environment_recovery: 300
