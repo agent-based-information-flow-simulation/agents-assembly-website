@@ -29,7 +29,7 @@ app.add_middleware(
 
 
 @app.exception_handler(PanicException)
-async def MyCustomExceptionHandler(request: Request, exception: PanicException):
+async def PanicExceptionHandler(request: Request, exception: PanicException):
     return JSONResponse(
         status_code=400,
         content={
