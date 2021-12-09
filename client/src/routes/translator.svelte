@@ -26,7 +26,6 @@
     });
     if (response.ok) {
       const responseBody = await response.json();
-      console.log(responseBody);
       const translatorVersion = responseBody['translator_version'];
       translatedCode = `# translator version: ${translatorVersion}\n`;
       responseBody['code_lines'].forEach((codeLine) => {
