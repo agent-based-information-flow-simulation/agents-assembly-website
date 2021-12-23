@@ -12,8 +12,7 @@ services:
       - 8000
     image: aasm-website-api
     networks:
-      - client-net-dev
-      - proxy-net-dev
+      - proxynet-dev
     ports:
       - "8000:8000"
     restart: "no"
@@ -32,8 +31,7 @@ services:
       - 3000
     image: aasm-website-client
     networks:
-      - client-net-dev
-      - proxy-net-dev
+      - proxynet-dev
     ports:
       - "3000:3000"
     restart: "no"
@@ -50,12 +48,11 @@ services:
       - client
     image: aasm-website-proxy
     networks:
-      - proxy-net-dev
+      - proxynet-dev
     ports:
       - "80:80"
       - "24678:24678"
     restart: "no"
 
 networks:
-  client-net-dev:
-  proxy-net-dev:
+  proxynet-dev:
