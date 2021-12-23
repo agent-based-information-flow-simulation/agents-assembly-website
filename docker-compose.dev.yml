@@ -16,7 +16,7 @@ services:
       - proxy-net-dev
     ports:
       - "8000:8000"
-    restart: always
+    restart: "no"
     volumes:
       - ./api/src:/api/src
 
@@ -36,7 +36,7 @@ services:
       - proxy-net-dev
     ports:
       - "3000:3000"
-    restart: always
+    restart: "no"
     volumes:
       - ./client:/app
 
@@ -54,7 +54,7 @@ services:
     ports:
       - "80:80"
       - "24678:24678"
-    restart: always
+    restart: "no"
 
 networks:
   client-net-dev:
