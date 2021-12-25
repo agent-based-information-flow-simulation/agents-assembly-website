@@ -26,16 +26,18 @@
     });
     if (response.ok) {
       const responseBody = await response.json();
+      console.log(responseBody)
       const translatorVersion = responseBody['translator_version'];
       translatedCode = `# translator version: ${translatorVersion}\n`;
       responseBody['agent_code_lines'].forEach((codeLine) => {
         translatedCode += codeLine;
       });
-      translatedCode += '\n'
-      translatedCode += '# graph generation\n'
-      responseBody['graph_code_lines'].forEach((codeLine) => {
-        translatedCode += codeLine;
-      });
+      if (responseBody['graph_code_lines'].length) {
+        translatedCode += '\n# graph generation\n'
+        responseBody['graph_code_lines'].forEach((codeLine) => {
+          translatedCode += codeLine;
+        });
+      }
     } else if (response.status === 400) {
       const responseBody = await response.json();
       const translatorVersion = responseBody['translator_version'];
