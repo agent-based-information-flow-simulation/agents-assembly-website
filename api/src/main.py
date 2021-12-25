@@ -17,7 +17,8 @@ class AgentsAssemblyCode(BaseModel):
 
 class SpadeCode(BaseModel):
     translator_version: str
-    code_lines: List[str]
+    agent_code_lines: List[str]
+    graph_code_lines: List[str]
 
 
 app = FastAPI(root_path="/api")
@@ -43,9 +44,11 @@ async def PanicExceptionHandler(request: Request, exception: PanicException):
 
 @app.post("/code/spade", response_model=SpadeCode)
 async def post_aasm_code(agent_assembly_code: AgentsAssemblyCode):
+    code = get_spade_code(agent_assembly_code.code_lines)
     return {
         "translator_version": __version__,
-        "code_lines": get_spade_code(agent_assembly_code.code_lines),
+        "agent_code_lines": code.agent_code_lines,
+        "graph_code_lines": code.graph_code_lines,
     }
 
 
