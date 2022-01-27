@@ -18,11 +18,11 @@
     "default": {
         "aasm": {
             "hashes": [
-                "sha256:769593e641807574b13141c25d1163d33bee31c2f3dfee5c94f7277fb8a13562",
-                "sha256:89b9c2effbedb5762df63f3db4591c4542599f2fe1d091235260292a3b87b6f5"
+                "sha256:03eba40b4a0546976f15c24e2853e47cb0acf44a804c7d17d7dd13a7295950df",
+                "sha256:07c42a27c6354486f0ecabbd6eefb0e38a18e8d20ccd10273a3d6cd235d9d3b5"
             ],
             "index": "pypi",
-            "version": "==0.0.27"
+            "version": "==0.0.28"
         },
         "anyio": {
             "hashes": [
