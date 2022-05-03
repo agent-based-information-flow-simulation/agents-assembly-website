@@ -12,7 +12,6 @@ This is the source code of agents-assembly.com
 
 ## Getting Started <a name = "getting_started"></a>
 
-
 ### Prerequisites
 
 ```
