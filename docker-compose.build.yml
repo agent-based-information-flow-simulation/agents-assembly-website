@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   api:
+    build: ./api
     container_name: api
     environment:
       - CLIENT_CORS_DOMAIN=https://agents-assembly.com
@@ -15,6 +16,12 @@ services:
     restart: always
 
   client:
+    build:
+      args:
+        - VITE_CLIENT_SIDE_API_URL=https://agents-assembly.com/api
+        - VITE_SERVER_SIDE_API_URL=http://proxy/api
+      context: ./client
+      dockerfile: Dockerfile.prod
     container_name: client
     expose:
       - 3000
@@ -24,6 +31,9 @@ services:
     restart: always
 
   proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile.prod
     container_name: proxy
     depends_on:
       - api
