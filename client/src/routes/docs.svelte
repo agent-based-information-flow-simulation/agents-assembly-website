@@ -7,10 +7,10 @@
     const response = await fetch(documentationUrl);
     if (response.ok) {
       const textMarkdown = await response.text();
-      // without target='_target' double click is required
+      // without target='_self' double click is required
       const htmlDocumentation = marked(textMarkdown).replaceAll(
         '<a',
-        '<a class="hover:underline" target="_target"'
+        '<a class="hover:underline" target="_self"'
       );
       return {
         props: {
