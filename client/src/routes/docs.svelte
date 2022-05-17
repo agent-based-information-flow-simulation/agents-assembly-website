@@ -47,7 +47,7 @@
     margin-right: 1em;
   }
   .markdown :global(h1) {
-    font-size: larger;
+    font-size: x-large;
     font-weight: bold;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
