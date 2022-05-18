@@ -32,7 +32,7 @@
         indexFadeAnimationStore.set({
           isFadeAlreadyUsed: true,
         });
-        return fade(node, { duration: 500 });
+        return fade(node, { duration: 400 });
       };
 
   const handleClickAnywhere = () => {
