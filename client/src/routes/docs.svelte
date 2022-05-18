@@ -1,7 +1,7 @@
 <script context="module">
   import { marked } from 'marked';
 
-  export async function load({ fetch }) {
+  export const load = async ({ fetch }) => {
     const documentationUrl =
       'https://raw.githubusercontent.com/agent-based-information-flow-simulation/agents-assembly-translator/main/DOCS.md';
     const response = await fetch(documentationUrl);
@@ -24,7 +24,7 @@
         },
       };
     }
-  }
+  };
 
   export const prerender = true;
 </script>
