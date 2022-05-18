@@ -7,7 +7,7 @@
   import CodeEditor from '../components/codeEditor.svelte';
 
   let aasmCode =
-    'message facebook_post, query\n\tprm photos, float\nemessage\n\nagent average_user\n\tprm friends, list, conn\n\tbehav facebook_activity, cyclic, 30\n\t\taction post_photos, send_msg, facebook_post, query\n\t\t\tdecl num_photos, float, 0\n\t\t\trand num_photos, int, uniform, 21, 37\n\t\t\tset send.photos, num_photos\n\t\t\tsend friends\n\t\teaction\n\tebehav\neagent\n\ngraph statistical\n\tsize 150\n\tdefg average_user, 100%, dist_exp, 0.1\negraph\n';
+    'message facebook_post, query\n\tprm photos, float\nemessage\n\nagent average_user\n\tprm friends, list, conn\n\tbehav facebook_activity, cyclic, 30\n\t\taction post_photos, send_msg, facebook_post, query\n\t\t\tdecl num_photos, float, 0\n\t\t\trand num_photos, int, uniform, 21, 37\n\t\t\tset send.photos, num_photos\n\t\t\tsend friends\n\t\teaction\n\tebehav\neagent\n\ngraph statistical\n\tdefg average_user, 150, dist_exp, 0.1\negraph\n';
   let translatedCode = '';
 
   const API_URL = getApiUrl();
