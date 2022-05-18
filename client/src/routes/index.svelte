@@ -88,9 +88,9 @@
             }, 2000);
           },
         };
-        
+
         // start the animation
-        const typed = new Typed('.typed', typedOptions);
+        new Typed('.typed', typedOptions);
       }
     }
   };
