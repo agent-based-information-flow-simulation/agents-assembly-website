@@ -102,8 +102,8 @@
 
         const typedOptions = {
           strings: shuffled,
-          typeSpeed: 110,
-          backSpeed: 90,
+          typeSpeed: 90,
+          backSpeed: 70,
           loop: false,
           showCursor: true,
           backDelay: 1000,
