@@ -20,7 +20,7 @@
     isDoneTyping = store['isDoneTyping'];
   });
 
-  const handleClickAnywhere = (event) => {
+  const handleClickAnywhere = () => {
     typingStore.set({
       isTypingInProgress: false,
       isDoneTyping: true,
@@ -64,6 +64,7 @@
             }, 1500);
           },
         };
+        // start the animation
         const typed = new Typed('.typed', typedOptions);
       }
     }
