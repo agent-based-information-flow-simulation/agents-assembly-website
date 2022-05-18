@@ -6,7 +6,7 @@
   <title>*.aasm - ecosystem</title>
 </svelte:head>
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center ml-0 mr-0 md:ml-10 md:mr-10">
   <p class="text-center">
     The translator is a part of the Agents Assembly ecosystem. Currently, the main goal is to
     provide a scalable environment for agent-based simulations.
@@ -60,9 +60,3 @@
     </li>
   </ul>
 </div>
-
-<!-- <style>
-  ul {
-    list-style-type: circle;
-  }
-</style> -->
