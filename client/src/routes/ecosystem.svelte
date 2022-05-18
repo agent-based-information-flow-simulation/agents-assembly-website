@@ -17,7 +17,7 @@
       <p>
         <a
           class="text-blue-800 hover:underline"
-          href="https://github.com/agent-based-information-flow-simulation/local-interface"
+          href="https://github.com/agent-based-information-flow-simulation/agents-assembly-translator"
           >Translator</a
         > - translator for Agents Assembly.
       </p>
@@ -53,7 +53,7 @@
       <p>
         <a
           class="text-blue-800 hover:underline"
-          href="https://github.com/agent-based-information-flow-simulation/local-interface"
+          href="https://github.com/agent-based-information-flow-simulation/agents-assembly-website"
           >Agents Assembly website</a
         > - source code of this website.
       </p>
