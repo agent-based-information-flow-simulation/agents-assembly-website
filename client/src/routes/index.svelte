@@ -67,9 +67,10 @@
             "I'm Agents Assembly.",
           ],
           typeSpeed: 110,
-          backSpeed: 95,
+          backSpeed: 90,
           loop: false,
           showCursor: true,
+          backDelay: 1000,
           onComplete: () => {
             setTimeout(() => {
               typingStore.set({
