@@ -58,14 +58,22 @@
           isDoneTyping: false,
         });
 
+        const unshuffled = [
+          "I'm simple.",
+          "I'm agent-oriented.",
+          "I'm safe.",
+          "I'm target agnostic.",
+        ];
+
+        const shuffled = unshuffled
+          .map((value) => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value);
+
+        shuffled.push("I'm Agents Assembly.");
+
         const typedOptions = {
-          strings: [
-            "I'm simple.",
-            "I'm agent-oriented.",
-            "I'm safe.",
-            "I'm target agnostic.",
-            "I'm Agents Assembly.",
-          ],
+          strings: shuffled,
           typeSpeed: 110,
           backSpeed: 90,
           loop: false,
@@ -80,6 +88,7 @@
             }, 2000);
           },
         };
+        
         // start the animation
         const typed = new Typed('.typed', typedOptions);
       }
