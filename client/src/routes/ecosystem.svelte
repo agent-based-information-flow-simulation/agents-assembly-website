@@ -18,6 +18,15 @@
         <a
           class="text-blue-800 hover:underline"
           href="https://github.com/agent-based-information-flow-simulation/local-interface"
+          >Translator</a
+        > - translator for Agents Assembly.
+      </p>
+    </li>
+    <li>
+      <p>
+        <a
+          class="text-blue-800 hover:underline"
+          href="https://github.com/agent-based-information-flow-simulation/local-interface"
           >Local Interface</a
         > - GUI for simulation definition, management, and analysis.
       </p>
@@ -38,6 +47,15 @@
           href="https://github.com/agent-based-information-flow-simulation/communication-server"
           >Communication Server</a
         > - cluster of servers used for XMPP communication.
+      </p>
+    </li>
+    <li>
+      <p>
+        <a
+          class="text-blue-800 hover:underline"
+          href="https://github.com/agent-based-information-flow-simulation/local-interface"
+          >Agents Assembly website</a
+        > - source code of this website.
       </p>
     </li>
   </ul>
