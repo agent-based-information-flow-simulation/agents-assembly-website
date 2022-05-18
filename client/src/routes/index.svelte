@@ -61,7 +61,7 @@
                 isTypingInProgress: false,
                 isDoneTyping: true,
               });
-            }, 1500);
+            }, 2000);
           },
         };
         // start the animation
