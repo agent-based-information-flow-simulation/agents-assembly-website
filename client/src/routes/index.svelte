@@ -92,7 +92,7 @@
       <div in:fade class="flex items-center justify-center h-auto p-5">
         <div class="container">
           <div class="flex justify-center">
-            <div class="bg-white shadow-xl text-center rounded-lg w-1/3">
+            <div class="bg-white shadow-xl text-center rounded-lg">
               <ul class="divide-y divide-gray-300">
                 <li class="p-4 hover:bg-gray-50">Simple domain specific language.</li>
                 <li class="p-4 hover:bg-gray-50">Designed for agent-oriented programming.</li>
