@@ -8,6 +8,7 @@
   import Typed from 'typed.js';
   import { browser } from '$app/env';
   import { typingStore } from '../stores/typingStore';
+  import { indexFadeAnimationStore } from '../stores/indexFadeAnimationStore';
   import { clickAnywhere } from '../events/clickAnywhere';
 
   let isTypingInProgress;
@@ -19,6 +20,20 @@
   typingStore.subscribe((store) => {
     isDoneTyping = store['isDoneTyping'];
   });
+
+  let isFadeAlreadyUsed;
+  indexFadeAnimationStore.subscribe((store) => {
+    isFadeAlreadyUsed = store['isFadeAlreadyUsed'];
+  });
+
+  $: singleFadeAnimation = isFadeAlreadyUsed
+    ? () => {}
+    : (node) => {
+        indexFadeAnimationStore.set({
+          isFadeAlreadyUsed: true,
+        });
+        return fade(node, { duration: 500 });
+      };
 
   const handleClickAnywhere = () => {
     typingStore.set({
@@ -89,7 +104,7 @@
       <div class="flex flex-col items-center">
         <h1 class="text-4xl font-bold uppercase">Agents Assembly</h1>
       </div>
-      <div in:fade class="flex items-center justify-center h-auto p-5">
+      <div in:singleFadeAnimation class="flex items-center justify-center h-auto p-5">
         <div class="container">
           <div class="flex justify-center">
             <div class="bg-white shadow-xl text-center rounded-lg">
