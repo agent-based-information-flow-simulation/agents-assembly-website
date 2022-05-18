@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>*.aasm - ecosystem</title>
+  <title>ecosystem.aasm</title>
 </svelte:head>
 
 <div class="flex flex-col items-center ml-0 mr-0 md:ml-10 md:mr-10">

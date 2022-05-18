@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>*.aasm - publications</title>
+  <title>publications.aasm</title>
 </svelte:head>
 
 <div class="flex flex-col items-center ml-0 mr-0 md:ml-10 md:mr-10">...</div>

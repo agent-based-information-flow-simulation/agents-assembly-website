@@ -59,7 +59,7 @@
 <svelte:window on:keydown={handleCtrlEnter} />
 
 <svelte:head>
-  <title>*.aasm - translator</title>
+  <title>translator.aasm</title>
 </svelte:head>
 
 <div class="flex flex-col items-center">

@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-  <title>*.aasm - docs</title>
+  <title>docs.aasm</title>
 </svelte:head>
 
 <div class="markdown">
