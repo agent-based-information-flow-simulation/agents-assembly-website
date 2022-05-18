@@ -21,6 +21,10 @@ class SpadeCode(BaseModel):
     graph_code_lines: List[str]
 
 
+class Version(BaseModel):
+    translator_version: str
+
+
 app = FastAPI(root_path="/api")
 app.add_middleware(
     CORSMiddleware,
@@ -49,6 +53,13 @@ async def post_aasm_code(agent_assembly_code: AgentsAssemblyCode):
         "translator_version": __version__,
         "agent_code_lines": code.agent_code_lines,
         "graph_code_lines": code.graph_code_lines,
+    }
+
+
+@app.get("/version", response_model=Version)
+async def get_version():
+    return {
+        "translator_version": __version__,
     }
 
 
