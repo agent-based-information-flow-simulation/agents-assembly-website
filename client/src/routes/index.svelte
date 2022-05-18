@@ -25,7 +25,9 @@
     }
   };
 
-  export const prerender = true;
+  // TODO: fix getting the env. variables on the server side in load()
+  // and change the following to true:
+  export const prerender = false;
 </script>
 
 <script>
