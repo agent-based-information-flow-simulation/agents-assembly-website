@@ -8,7 +8,7 @@ export const clickAnywhere = (node) => {
   document.addEventListener('click', handleClick);
 
   return {
-    destory() {
+    destroy() {
       document.removeEventListener('click', handleClick);
     },
   };
