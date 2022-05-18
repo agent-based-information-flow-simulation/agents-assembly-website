@@ -7,12 +7,12 @@
 </svelte:head>
 
 <div class="flex flex-col items-center">
-  <p>
+  <p class="text-center">
     The translator is a part of the Agents Assembly ecosystem. Currently, the main goal is to
     provide a scalable environment for agent-based simulations.
   </p>
-  <p>Related projects:</p>
-  <ul>
+  <p class="text-center">Related projects:</p>
+  <ul class="text-center list-none md:text-left md:list-disc">
     <li>
       <p>
         <a
@@ -61,8 +61,8 @@
   </ul>
 </div>
 
-<style>
+<!-- <style>
   ul {
     list-style-type: circle;
   }
-</style>
+</style> -->
