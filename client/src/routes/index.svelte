@@ -1,4 +1,30 @@
 <script context="module">
+  import { getApiUrl } from '../utils/env';
+
+  export const load = async ({ fetch }) => {
+    const API_URL = getApiUrl();
+    const response = await fetch(`${API_URL}/version`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (response.ok) {
+      const body = await response.json();
+      const translatorVersion = body['translator_version'];
+      return {
+        props: {
+          translatorVersion,
+        },
+      };
+    } else {
+      return {
+        props: {
+          translatorVersion: 'unknown',
+        },
+      };
+    }
+  };
+
   export const prerender = true;
 </script>
 
@@ -98,6 +124,8 @@
   onMount(() => {
     handleTypingAnimation();
   });
+
+  export let translatorVersion;
 </script>
 
 <svelte:head>
@@ -113,6 +141,7 @@
     <div>
       <div class="flex flex-col items-center">
         <h1 class="text-4xl font-bold uppercase">Agents Assembly</h1>
+        <p class="text-sm">version {translatorVersion}</p>
       </div>
       <div in:singleFadeAnimation class="flex items-center justify-center h-auto p-5">
         <div class="container">
