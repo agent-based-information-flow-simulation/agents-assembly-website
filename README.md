@@ -8,7 +8,7 @@
 
 ## About <a name = "about"></a>
 
-This is the source code of agents-assembly.com
+This is the source code of https://agents-assembly.com
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -28,4 +28,4 @@ For the local development use the `.dev` compose file.
 
 ## Usage <a name = "usage"></a>
 
-After starting the `.dev` compose file, open http://localhost
+After starting the `.dev` compose file, open http://localhost:80.
