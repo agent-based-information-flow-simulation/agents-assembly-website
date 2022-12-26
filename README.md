@@ -1,4 +1,4 @@
-# AGENTS ASSEMBLY WEBSITE
+# Agents Assembly Website
 
 ## Table of Contents
 
