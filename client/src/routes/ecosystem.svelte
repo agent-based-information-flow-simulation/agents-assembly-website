@@ -54,6 +54,15 @@
       <p>
         <a
           class="text-blue-800 hover:underline"
+          href="https://github.com/agent-based-information-flow-simulation/local-development-environment"
+          >Local Development Environment</a
+        > - simple environment for running agent-based simulations.
+      </p>
+    </li>
+    <li>
+      <p>
+        <a
+          class="text-blue-800 hover:underline"
           href="https://github.com/agent-based-information-flow-simulation/agents-assembly-website"
           >Agents Assembly website</a
         > - source code of this website.
