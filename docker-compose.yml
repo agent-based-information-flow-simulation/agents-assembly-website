@@ -9,7 +9,7 @@ services:
       - RELOAD=False
     expose:
       - 8000
-    image: madpeh/aasm-website-api
+    image: aasm/aasm-website-api
     networks:
       - proxynet
     restart: always
@@ -18,7 +18,7 @@ services:
     container_name: client
     expose:
       - 3000
-    image: madpeh/aasm-website-client
+    image: aasm/aasm-website-client
     networks:
       - proxynet
     restart: always
@@ -30,7 +30,7 @@ services:
       - client
     expose:
       - 80
-    image: madpeh/aasm-website-proxy
+    image: aasm/aasm-website-proxy
     networks:
       - proxynet
     ports:

@@ -1,4 +1,4 @@
-FROM nginx:1.21.3-alpine
+FROM nginx:1.23.3-alpine-slim
 RUN rm /usr/share/nginx/html/*
 COPY config/prod.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
