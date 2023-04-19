@@ -162,11 +162,7 @@
       </div>
       <div class="flex flex-col items-center">
         <h1 class="text-2xl uppercase">Install using pip</h1>
-        <pre>
-      <code>
-        pip install aasm
-      </code>
-    </pre>
+        <code>pip install aasm</code>
       </div>
     </div>
   {/if}
